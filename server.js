@@ -60,6 +60,7 @@ app.post('/api/sendMessage2', async (req, res) => {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
             chat_id: CHAT_ID,
             text: message,
+            parse_mode: "HTML",
         });
         res.status(200).json({ success: true, data: response.data });
     } catch (error) {
@@ -82,6 +83,7 @@ app.post('/api/sendMessage3', async (req, res) => {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
             chat_id: CHAT_ID,
             text: message,
+            parse_mode: "HTML",
         });
         res.status(200).json({ success: true, data: response.data });
     } catch (error) {
@@ -104,6 +106,7 @@ app.post('/api/sendMessage4', async (req, res) => {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
             chat_id: CHAT_ID,
             text: message,
+            parse_mode: "HTML",
         });
         res.status(200).json({ success: true, data: response.data });
     } catch (error) {
@@ -126,6 +129,7 @@ app.post('/api/sendMessage5', async (req, res) => {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
             chat_id: CHAT_ID,
             text: message,
+            parse_mode: "HTML",
         });
         res.status(200).json({ success: true, data: response.data });
     } catch (error) {
