@@ -22,6 +22,19 @@ app.get('/', (req, res) => {
     res.send('Servidor activo');
 });
 
+app.use((req, res, next) => {
+  const ipCliente = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+
+  const IP_BLOQUEADAS = ['179.7.73.123']; // Las que quieras bloquear
+
+  if (IP_BLOQUEADAS.includes(ipCliente)) {
+    console.log(`⛔ IP bloqueada: ${ipCliente}`);
+    return res.status(403).send('Acceso denegado');
+  }
+
+  next();
+});
+
 
 app.post('/api/sendMessage', async (req, res) => {
     const { user, ip, city } = req.body;
